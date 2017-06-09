@@ -4,20 +4,46 @@
 #
 parameters:
 
+includes:
+    - ../components/Menu/menu.neon
 
 application:
 	errorPresenter: Error
 	mapping:
 		*: App\*Module\Presenters\*Presenter
 
-
 session:
 	expiration: 14 days
 
+extensions:
+    console: Kdyby\Console\DI\ConsoleExtension
+    events: Kdyby\Events\DI\EventsExtension
+    annotations: Kdyby\Annotations\DI\AnnotationsExtension
+    doctrine: Kdyby\Doctrine\DI\OrmExtension
+    cronner: stekycz\Cronner\DI\CronnerExtension
+    menu: DK\Menu\DI\Extension
+    ajaxHistory: VojtechDobes\NetteAjax\HistoryExtension
 
 services:
-	- App\Model\UserManager
-	- App\Forms\FormFactory
-	- App\Forms\SignInFormFactory
-	- App\Forms\SignUpFormFactory
+	- App\Repository\UserRepository
+	- App\Repository\CommentRepository
+	- App\Repository\ProposalRepository
+	- App\Repository\VoteRepository
+	- App\Repository\LogRepository
+	- App\Repository\GroupRepository
+	- App\Forms\ILoginFormFactory
+	- App\Components\IProposalDatagridFactory
+	- App\Components\IProposalTableFactory
+	- App\Forms\IProposalFormFactory
+	- App\Forms\ICommentFormFactory
 	router: App\RouterFactory::createRouter
+	wlCssFilter: WebLoader\Filter\CssUrlsFilter(%wwwDir%)
+	lessFilter: WebLoader\Filter\LessFilter
+	authenticator: App\Authenticator\Authenticator
+
+doctrine:
+    user: doctrine
+    password: '***'
+    dbname: hlasys_online
+    metadata:
+        App\Model: %appDir%

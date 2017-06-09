@@ -18,6 +18,7 @@ class RouterFactory
 	{
 		$router = new RouteList;
 		$router[] = new Route('<presenter>/<action>', 'Homepage:default');
+		$router[] = new Route('<presenter>/<action>/<id>', 'Proposal:detail');
 		return $router;
 	}
 

@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="header text-center login-header">Hla<b>SYS</b></div>
+    <div class="content">
+        {form myForm}
+            <div class="form-group">
+                <label>Uživatelské jméno</label>
+                <input n:name="username" type="text" placeholder="Uživatelské jméno" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Heslo</label>
+                <input n:name="password" type="password" placeholder="Heslo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="checkbox checked">
+                            <span class="icons">
+                                <span class="first-icon fa fa-square-o"></span>
+                                <span class="second-icon fa fa-check-square-o"></span>
+                            </span>
+                    <input n:name="remember" type="checkbox" data-toggle="checkbox" value="" checked="">
+                    Pamatovat si mě
+                </label>
+            </div>
+            <button n:name="send" type="submit" class="btn btn-info">Přihlásit se</button>
+        {/form}
+    </div>
+</div>
+<!-- TODO udelat required a validaci -->

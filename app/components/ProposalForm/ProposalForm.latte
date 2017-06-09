@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Přidat návrh</h4>
+            </div>
+            <div class="content">
+                {form myForm}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Název</label>
+                                <input n:name="title" type="text" class="form-control" placeholder="Název návrhu">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Bude hlasovat</label>
+                                <select n:name="group" class="form-control">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Začátek hlasování</label>
+                                <input type="date" class="form-control" disabled>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Konec hlasování</label>
+                                <input type="date" class="form-control" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Text návrhu</label>
+                                <textarea n:name="description" rows="5" class="form-control"
+                                                               placeholder="Sem zadejte text Vašeho návrhu"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Položky</label>
+                            <ul class="list-group">
+                                <a href="#" class="list-group-item">First item <span class="badge"
+                                                                                     style="background-color: transparent;color: red"><i
+                                                class="pe-7s-trash"></i></span> <span class="badge">12</span></a>
+                                <a href="#" class="list-group-item">First item <span class="badge"
+                                                                                     style="background-color: transparent;color: red"><i
+                                                class="pe-7s-trash"></i></span> <span class="badge">12</span></a>
+                                <a href="#" class="list-group-item">First item <span class="badge"
+                                                                                     style="background-color: transparent;color: red"><i
+                                                class="pe-7s-trash"></i></span> <span class="badge">12</span></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <button n:name="send" type="submit" class="btn btn-success btn-fill col-md-offset-5 col-md-2">
+                        Vytvořit návrh
+                    </button>
+                    <div class="clearfix"></div>
+                {/form}
+            </div>
+        </div>
+    </div>
+
+</div>

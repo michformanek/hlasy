@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: mformanek
+ * Date: 12.2.17
+ * Time: 9:38
+ */
 
 namespace App\Presenters;
 
@@ -8,8 +14,7 @@ use App\Repository\UserRepository;
 use Nette;
 use App\Model;
 
-
-class HomepagePresenter extends SecuredPresenter
+class TrashPresenter extends SecuredPresenter
 {
 
     private $proposalRepository;
@@ -38,10 +43,9 @@ class HomepagePresenter extends SecuredPresenter
 
     }
 
-    public function createComponentMyProposals()
+    public function createComponentDeletedProposals()
     {
         $currentUser = $this->userRepository->findOneBy(array('id' => $this->user->getId()));
-        return $this->proposalTableFactory->create($this->proposalRepository->findAllForUser($currentUser)); //TODO zobrazovat pouze ty patrici prihlasenemu
+        return $this->proposalTableFactory->create($this->proposalRepository->findDeletedForUser($currentUser));
     }
-
 }

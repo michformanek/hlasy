@@ -1,0 +1,10 @@
+Administrace - pridavani kategorii, nastaveni hlasovani
+Hlasovaci formular
+Pridavani itemu k proposalu
+Opravit backlkink a redirect
+Flash messages
+Uzivatelske role
+Validace formularu
+Datagrid
+Nette ajax history
+Komentare v kodu

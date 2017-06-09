@@ -11,5 +11,12 @@ use App\Model;
  */
 abstract class BasePresenter extends Nette\Application\UI\Presenter
 {
-
+    protected function beforeRender()
+    {
+        parent::beforeRender();
+        if ($this->isAjax()) {
+            $this->redrawControl('title');
+            $this->redrawControl('content');
+        }
+    }
 }
