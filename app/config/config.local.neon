@@ -1,0 +1,6 @@
+parameters:
+
+doctrine:
+    user: userJC6
+    password: DSglDUgmJVrQyd3M
+    dbname: sampledb
